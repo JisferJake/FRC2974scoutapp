@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class home extends AppCompatActivity {
+public class Home extends AppCompatActivity {
 
     boolean testBool = false;
     int incrementNumber = 0;
@@ -19,7 +19,7 @@ public class home extends AppCompatActivity {
     }
 
     public void sendMessage(View view){
-        Intent intent = new Intent(this, hi.class);
+        Intent intent = new Intent(this, NewScreen.class);
         EditText editText = findViewById(R.id.editText2);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
