@@ -9,7 +9,7 @@
 
     <TextView
             android:text="New Screen"
-            android:layout_width="138dp"
-            android:layout_height="82dp" android:id="@+id/textView" tools:layout_editor_absoluteY="16dp"
-            tools:layout_editor_absoluteX="123dp"/>
+            android:layout_width="368dp"
+            android:layout_height="35dp" android:id="@+id/textView" tools:layout_editor_absoluteY="16dp"
+            tools:layout_editor_absoluteX="12dp"/>
 </android.support.constraint.ConstraintLayout>
