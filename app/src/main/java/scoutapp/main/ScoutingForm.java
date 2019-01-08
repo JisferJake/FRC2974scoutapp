@@ -7,19 +7,20 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Home extends AppCompatActivity {
+public class ScoutingForm extends AppCompatActivity {
 
     boolean testBool = false;
     int incrementNumber = 0;
     public static final String EXTRA_MESSAGE = "com.example.frcScoutApp.MESSAGE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_scouting_form);
     }
 
     public void sendMessage(View view){
-        Intent intent = new Intent(this, NewScreen.class);
+        Intent intent = new Intent(this, HomeScreen.class);
         EditText editText = findViewById(R.id.editText2);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
@@ -51,6 +52,5 @@ public class Home extends AppCompatActivity {
         TextView trueFalse = findViewById(R.id.boolDisplay);
         numberIncrement.setText("" + number);
         trueFalse.setText("" + test);
-
     }
 }
