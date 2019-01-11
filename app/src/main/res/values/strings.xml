@@ -2,6 +2,5 @@
     <string name="app_name">2974ScoutApp</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
-    <string name="switch">Switch</string>
     <string name="text_name">Text Name</string>
 </resources>
