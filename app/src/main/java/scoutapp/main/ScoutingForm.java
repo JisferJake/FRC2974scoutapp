@@ -1,18 +1,39 @@
 package scoutapp.main;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ScoutingForm extends AppCompatActivity {
 
+    private Map<Integer, AtomicInteger> buttonsToAtomicInt;
+    private Map<Integer, Integer> buttonsToTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        int[] plusButtons = {R.id.plusButtonACSC, R.id.plusButtonACSH, R.id.plusButtonARH, R.id.plusButtonARC, R.id.plusButtonTCSC, R.id.plusButtonTCSH, R.id.plusButtonTRC, R.id.plusButtonTRH};
+        int[] minusButtons = {R.id.minusButtonACSC, R.id.minusButtonACSH, R.id.minusButtonARH, R.id.minusButtonARC, R.id.minusButtonTCSC, R.id.minusButtonTCSH, R.id.minusButtonTRC, R.id.minusButtonTRH};
+        int[] textview = {R.id.autoCSC, R.id.autoCSH, R.id.autoRH, R.id.autoRC, R.id.teleOPCSC, R.id.teleOPCSH, R.id.teleOPRC, R.id.teleOPRH};
+
+        buttonsToAtomicInt = new HashMap<>();
+        buttonsToTextView = new HashMap<>();
+
+        for (int i = 0; i < plusButtons.length; i++) {
+            AtomicInteger inty = new AtomicInteger(0);
+            buttonsToAtomicInt.put(plusButtons[i], inty);
+            buttonsToAtomicInt.put(minusButtons[i], inty);
+        }
+
+        for (int i = 0; i < textview.length; i++) {
+            buttonsToTextView.put(plusButtons[i], textview[i]);
+            buttonsToTextView.put(minusButtons[i], textview[i]);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scouting_form);
     }
@@ -26,56 +47,15 @@ public class ScoutingForm extends AppCompatActivity {
 //        startActivity(intent);
 //    }
 
-    TextView autoCSC = findViewById(R.id.autoCSC);
-    TextView autoCSH = findViewById(R.id.autoCSH);
-    TextView autoRC = findViewById(R.id.autoRC);
-    TextView autoRH = findViewById(R.id.autoRH);
-
-    AtomicInteger csc = new AtomicInteger(0);
-    AtomicInteger csh = new AtomicInteger(0);
-    AtomicInteger rc = new AtomicInteger(0);
-    AtomicInteger rh = new AtomicInteger(0);
-
-
-    public void incrementValue(AtomicInteger integer){
-        integer.getAndIncrement();
+    public void incHashy(View view) {
+        buttonsToAtomicInt.get(view.getId()).getAndIncrement();
+        TextView text = findViewById(buttonsToTextView.get(view.getId()));
+        text.setText(buttonsToAtomicInt.get(view.getId()).toString());
     }
 
-    public void decrementValue(AtomicInteger integer){
-        integer.getAndDecrement();
+    public void decHashy(View view) {
+        buttonsToAtomicInt.get(view.getId()).getAndDecrement();
+        TextView text = findViewById(buttonsToTextView.get(view.getId()));
+        text.setText(buttonsToAtomicInt.get(view.getId()).toString());
     }
-
-    public void incCSC(View view) {
-        incrementValue(csc);
-        autoCSC.setText(csc.intValue());
-    }
-    public void incCSH(View view) {
-        incrementValue(csh);
-        autoCSH.setText(csh.intValue());
-    }
-    public void incRC(View view) {
-        incrementValue(rc);
-        autoRC.setText(rc.intValue());
-    }
-    public void incRH(View view) {
-        incrementValue(rh);
-        autoRH.setText(rh.intValue());
-    }
-    public void decCSC(View view) {
-        incrementValue(csc);
-        autoCSC.setText(csc.intValue());
-    }
-    public void decCSH(View view) {
-        incrementValue(csh);
-        autoCSH.setText(csh.intValue());
-    }
-    public void decRC(View view) {
-        incrementValue(rc);
-        autoRC.setText(rc.intValue());
-    }
-    public void decRH(View view) {
-        incrementValue(rh);
-        autoRH.setText(rh.intValue());
-    }
-
 }
