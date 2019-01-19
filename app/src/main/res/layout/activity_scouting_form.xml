@@ -32,18 +32,13 @@
                         android:inputType="textPersonName"
                         android:ems="10"
                         android:id="@+id/editText4" android:layout_weight="1" android:hint="Team #"/>
-                <EditText
-                        android:layout_width="203dp"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
-                        android:ems="10"
-                        android:id="@+id/editText5" android:hint="Alliance Color" android:layout_weight="1"/>
-                <EditText
-                        android:layout_width="181dp"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
-                        android:ems="10"
-                        android:id="@+id/editText6" android:hint="Starting Position" android:layout_weight="1"/>
+                <Spinner
+                        android:layout_width="157dp"
+                        android:layout_height="match_parent" android:id="@+id/dropColor" android:layout_weight="1"
+                />
+                <Spinner
+                        android:layout_width="164dp"
+                        android:layout_height="match_parent" android:id="@+id/dropPosition" android:layout_weight="1"/>
             </LinearLayout>
             <TextView
                     android:text="Autonomous"
