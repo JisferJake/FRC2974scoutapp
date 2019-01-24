@@ -38,16 +38,27 @@ public class ScoutingForm extends AppCompatActivity {
             buttonsToTextView.put(minusButtons[i], textview[i]);
         }
 
+        //Drop Menu of Alliance Colors
         Spinner dropColor = findViewById(R.id.dropColor);
-        Spinner dropPos = findViewById(R.id.dropPosition);
         String[] alliances = {"Color", "Red", "Blue"};
-        String[] positions = {"Position", "Close", "Middle", "Far"};
-
-
         ArrayAdapter<String> dropColors = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, alliances);
-        ArrayAdapter<String> dropPositions = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, positions);
         dropColor.setAdapter(dropColors);
+
+        //Drop Menu of
+        Spinner dropPos = findViewById(R.id.dropPosition);
+        String[] positions = {"Position", "Close", "Middle", "Far"};
+        ArrayAdapter<String> dropPositions = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, positions);
         dropPos.setAdapter(dropPositions);
+
+        Spinner dropConnection = findViewById(R.id.dropConnection);
+        String[] connections = {"None", "Once", "More than once"};
+        ArrayAdapter<String> dropConnections = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, connections);
+        dropConnection.setAdapter(dropConnections);
+
+        Spinner dropClimb = findViewById(R.id.dropClimb);
+        String[] climbs = {"Level Climbed to", "Garbage", "Level 1", "Level 2", "Level 3"};
+        ArrayAdapter<String> dropClimbs = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, climbs);
+        dropClimb.setAdapter(dropClimbs);
     }
 
 //    Example of Sending Information between intents

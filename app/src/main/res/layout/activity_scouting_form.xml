@@ -27,11 +27,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" android:id="@+id/PreMatchInfo">
                 <EditText
-                        android:layout_width="113dp"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
+                        android:inputType="number"
                         android:ems="10"
-                        android:id="@+id/editText4" android:layout_weight="1" android:hint="Team #"/>
+                        android:id="@+id/teamNumber" android:layout_weight="1" android:hint="Team #"/>
                 <Spinner
                         android:layout_width="157dp"
                         android:layout_height="match_parent" android:id="@+id/dropColor" android:layout_weight="1"
@@ -52,7 +52,7 @@
                     tools:layout_editor_absoluteX="16dp"
                     tools:layout_editor_absoluteY="57dp" android:id="@+id/habLineLayout">
                 <CheckBox
-                        android:text="Auton?"
+                        android:text="has Auton?"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/checkBox" android:layout_weight="1"/>
                 <CheckBox
@@ -206,7 +206,7 @@
             <TextView
                     android:text="Rocket Hatches"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/rocketHatches"/>
+                    android:layout_height="wrap_content" android:id="@+id/rocketHatchesTitle"/>
             <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -229,7 +229,7 @@
             <TextView
                     android:text="Cargo Ship Hatches"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/cargoShipHatches"/>
+                    android:layout_height="wrap_content" android:id="@+id/cargoShipHatchesTitle"/>
             <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -258,6 +258,42 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/checkBox2" android:layout_weight="1"/>
             </LinearLayout>
+            <TextView
+                    android:text="End Game"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/endGameName"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:id="@+id/levelClimbedTo">
+                <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/dropClimb" android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView
+                    android:text="Disconnected?"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/connectionDuringMatch"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+            <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/dropConnection"/>
+            <CheckBox
+                    android:text="Unstable Robot?"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/unstable"/>
+            <TextView
+                    android:text="Other Comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/otherComments"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:ems="10"
+                    android:id="@+id/comments"/>
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
