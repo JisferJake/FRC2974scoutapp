@@ -161,6 +161,10 @@
                     android:inputType="textMultiLine"
                     android:ems="10"
                     android:id="@+id/otherDesc" android:hint="Description"/>
+            <Button
+                    android:text="Take Picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/picButton" android:onClick="takePicture"/>
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

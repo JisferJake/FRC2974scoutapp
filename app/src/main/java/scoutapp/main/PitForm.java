@@ -1,11 +1,34 @@
 package scoutapp.main;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 public class PitForm extends AppCompatActivity {
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+
+    private void dispatchTakePictureIntent(){
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if(takePictureIntent.resolveActivity(getPackageManager()) != null){
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        ImageView robotPicture = findViewById(R.id.robotImage);
+        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            robotPicture.setImageBitmap(imageBitmap);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,4 +50,10 @@ public class PitForm extends AppCompatActivity {
         ArrayAdapter<String> dropIntakes = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, intakes);
         dropIntake.setAdapter(dropIntakes);
     }
+
+    public void takePicture(View view){
+        dispatchTakePictureIntent();
+    }
+
+
 }
