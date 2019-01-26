@@ -18,13 +18,13 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName"
                         android:ems="10"
-                        android:id="@+id/teamName" android:layout_weight="1" android:hint="Team Name"/>
+                        android:id="@+id/textTeamName" android:layout_weight="1" android:hint="Team Name"/>
                 <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:inputType="number"
                         android:ems="10"
-                        android:id="@+id/teamNumber" android:layout_weight="1" android:hint="Team #"/>
+                        android:id="@+id/textTeamNumber" android:layout_weight="1" android:hint="Team #"/>
             </LinearLayout>
             <LinearLayout
                     android:orientation="horizontal"
@@ -33,7 +33,7 @@
                     android:id="@+id/startPositionLayout">
                 <Spinner
                         android:layout_width="match_parent"
-                        android:layout_height="44dp" android:id="@+id/startPosition" android:layout_weight="1"/>
+                        android:layout_height="44dp" android:id="@+id/dropStartPosition" android:layout_weight="1"/>
             </LinearLayout>
             <LinearLayout
                     android:orientation="horizontal"
@@ -41,7 +41,7 @@
                     android:layout_height="match_parent" android:id="@+id/driveTrainLayout">
                 <Spinner
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/dropDriveTrain"
+                        android:layout_height="wrap_content" android:id="@+id/dropIntake"
                         android:layout_weight="1" android:gravity="center_horizontal"/>
             </LinearLayout>
             <LinearLayout
@@ -53,7 +53,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="date"
                         android:ems="10"
-                        android:id="@+id/weight" android:layout_weight="1"
+                        android:id="@+id/textWeight" android:layout_weight="1"
                         android:hint="Weight (lb)"/>
             </LinearLayout>
             <TextView
@@ -64,7 +64,7 @@
             <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent" android:id="@+id/cargo">
                 <TextView
                         android:text="Cargo"
                         android:layout_width="85dp"
@@ -73,7 +73,7 @@
                 <CheckBox
                         android:text="Cargo Ship"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/checkShipCargo"
+                        android:layout_height="wrap_content" android:id="@+id/checkCargoShip"
                         android:layout_weight="1" tools:text="Cargo Ship"/>
                 <CheckBox
                         android:text="Rocket"
@@ -93,12 +93,13 @@
                 <CheckBox
                         android:text="Cargo Ship"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/checkCargoSip" android:layout_weight="1"
+                        android:layout_height="wrap_content" android:id="@+id/checkHatchShip" android:layout_weight="1"
                         tools:text="Cargo Ship"/>
                 <CheckBox
                         android:text="Rocket"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/checkRocket" android:layout_weight="1"
+                        android:layout_height="wrap_content" android:id="@+id/checkHatchRocket"
+                        android:layout_weight="1"
                         tools:text="Rocket"/>
             </LinearLayout>
             <LinearLayout
@@ -118,17 +119,6 @@
                         android:layout_height="wrap_content" android:id="@+id/checkAssisst" android:layout_weight="1"/>
             </LinearLayout>
             <TextView
-                    android:text="Intake"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/intakeName"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
-            <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/intakeInput" android:hint="Description"/>
-            <TextView
                     android:text="Strategies"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/Strategies"
@@ -138,29 +128,33 @@
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
                     android:ems="10"
-                    android:id="@+id/editText13" android:hint="Description"/>
+                    android:id="@+id/textStrategies" android:hint="Description"/>
             <TextView
                     android:text="Planned Changes"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/textPlanned"
+                    android:layout_height="wrap_content" android:id="@+id/planned"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
                     android:ems="10"
-                    android:id="@+id/plannedChanges" android:hint="Description"/>
+                    android:id="@+id/textPlannedChanges" android:hint="Description"/>
             <TextView
                     android:text="Other Info"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/textOther"
+                    android:layout_height="wrap_content" android:id="@+id/otherInfo"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
                     android:ems="10"
-                    android:id="@+id/otherDesc" android:hint="Description"/>
+                    android:id="@+id/textOtherInfo" android:hint="Description"/>
+            <Button
+                    android:text="export"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/export" android:onClick="export"/>
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
