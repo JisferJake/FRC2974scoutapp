@@ -96,8 +96,8 @@ public class ScoutingForm extends AppCompatActivity {
      * @return a boolean array of all the check marks on
      */
     private String[] getBooleans() {
-        int[] ids = {R.id.auton, R.id.habLine, R.id.defense, R.id.unstable};
-        String[] names = {"Auton", "Hab Line", "Defense", "Unstable"};
+        int[] ids = {R.id.auton, R.id.habLine, R.id.defense, R.id.unstable, R.id.checkAssist};
+        String[] names = {"Auton", "Hab Line", "Defense", "Unstable", "Helped Another Climb"};
         String[] rtn = new String[ids.length];
 
         for(int i = 0; i < rtn.length; i++) {
@@ -109,7 +109,7 @@ public class ScoutingForm extends AppCompatActivity {
 
     private String[] getTextFields() {
         int[] ids = {R.id.teamNumber, R.id.comments};
-        String[] names = {"team Numer", "Comments"};
+        String[] names = {"team Number", "Comments"};
         String[] rtn = new String[ids.length];
 
         for (int i = 0; i < rtn.length; i++) {
