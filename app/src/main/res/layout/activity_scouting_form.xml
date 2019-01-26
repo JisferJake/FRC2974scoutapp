@@ -271,6 +271,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/dropClimb" android:layout_weight="1"/>
             </LinearLayout>
+            <CheckBox
+                    android:text="Helped Another Climb?"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/checkAssist"/>
             <TextView
                     android:text="Disconnected?"
                     android:layout_width="match_parent"
