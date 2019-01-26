@@ -4,9 +4,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import android.widget.TextView;
+import android.widget.*;
 
 import java.io.*;
 import java.util.HashMap;
@@ -93,15 +91,70 @@ public class ScoutingForm extends AppCompatActivity {
         }
     }
 
+    /**
+     *
+     * @return a boolean array of all the check marks on
+     */
+    private String[] getBooleans() {
+        int[] ids = {R.id.auton, R.id.habLine, R.id.defense, R.id.unstable};
+        String[] names = {"Auton", "Hab Line", "Defense", "Unstable"};
+        String[] rtn = new String[ids.length];
+
+        for(int i = 0; i < rtn.length; i++) {
+            CheckBox check = findViewById(ids[i]);
+            rtn[i] = names[i] +"," + check.isChecked();
+        }
+        return rtn;
+    }
+
+    private String[] getTextFields() {
+        int[] ids = {R.id.teamNumber, R.id.comments};
+        String[] names = {"team Numer", "Comments"};
+        String[] rtn = new String[ids.length];
+
+        for (int i = 0; i < rtn.length; i++) {
+            EditText edit = findViewById(ids[i]);
+            rtn[i] = names[i] + "," + edit.getText();
+        }
+        return rtn;
+    }
+
+    private String[] getDropDowns() {
+        int[] ids = {R.id.dropColor, R.id.dropPosition, R.id.dropClimb, R.id.dropConnection};
+        String[] names = {"Drop Color", "Drop Position", "Drop Climb", "Drop Connection"};
+        String[] rtn = new String[ids.length];
+
+        for (int i = 0; i < rtn.length; i++) {
+            Spinner spin = findViewById(ids[i]);
+            rtn[i] = names[i] + "," + spin.getSelectedItem().toString();
+        }
+        return rtn;
+    }
+
     public void export(View view) {
         final String DIRECTORY_2974SCOUTINGAPP = "2974ScoutingApp";         //Direction the Scouting App Folder is on the Android.
         System.out.println(Environment.DIRECTORY_DOWNLOADS);
         File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_2974SCOUTINGAPP), "ScoutingForm" + System.currentTimeMillis() + ".csv");
         try {
             file.createNewFile();
-            PrintWriter writer = new PrintWriter(file);
+            CSV csv = new CSV("Name, data");
             for(String key : numbersToIdentifiers.keySet())
-                writer.write(key + " " + numbersToIdentifiers.get(key) + "\n");
+                csv.addRow(key + "," + numbersToIdentifiers.get(key));
+
+            for(String str : getBooleans()) {
+                csv.addRow(str);
+            }
+
+            for(String str : getTextFields()) {
+                csv.addRow(str);
+            }
+
+            for(String str : getDropDowns()) {
+                csv.addRow(str);
+            }
+
+            PrintWriter writer = new PrintWriter(file);
+            writer.write(csv.compile());
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
