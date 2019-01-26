@@ -69,19 +69,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" android:id="@+id/autoCSCLayout">
                 <Button
-                        android:text="+"
+                        android:text="-"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonACSC" android:layout_weight="1"
-                        android:onClick="incHashy"/>
+                        android:layout_height="match_parent" android:id="@+id/minusButtonACSC" android:layout_weight="1"
+                        android:onClick="decHashy"/>
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent" android:id="@+id/autoCSC" android:layout_weight="1"
                         android:gravity="center" android:text="0" android:textSize="30sp"/>
                 <Button
-                        android:text="-"
+                        android:text="+"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonACSC"
-                        android:layout_weight="1" android:onClick="decHashy"/>
+                        android:layout_height="match_parent" android:id="@+id/plusButtonACSC"
+                        android:layout_weight="1" android:onClick="incHashy"/>
             </LinearLayout>
             <TextView
                     android:text="Rocket Cargo"
@@ -92,19 +92,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" android:id="@+id/autoRCLayout">
                 <Button
-                        android:text="+"
+                        android:text="-"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent" android:layout_weight="1"
-                        android:onClick="incHashy" android:id="@+id/plusButtonARC"/>
+                        android:onClick="decHashy" android:id="@+id/minusButtonARC"/>
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent" android:id="@+id/autoRC" android:layout_weight="1"
                         android:gravity="center" android:text="0" android:textSize="30sp"/>
                 <Button
-                        android:text="-"
+                        android:text="+"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonARC" android:layout_weight="1"
-                        android:onClick="decHashy"/>
+                        android:layout_height="match_parent" android:id="@+id/plusButtonARC" android:layout_weight="1"
+                        android:onClick="incHashy"/>
             </LinearLayout>
             <TextView
                     android:text="Rocket Hatches"
@@ -115,19 +115,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" android:id="@+id/autoRHLayout">
                 <Button
-                        android:text="+"
+                        android:text="-"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonARH" android:layout_weight="1"
-                        android:onClick="incHashy"/>
+                        android:layout_height="match_parent" android:id="@+id/minusButtonARH" android:layout_weight="1"
+                        android:onClick="decHashy"/>
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent" android:id="@+id/autoRH" android:layout_weight="1"
                         android:gravity="center" android:text="0" android:textSize="30sp"/>
                 <Button
-                        android:text="-"
+                        android:text="+"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonARH" android:layout_weight="1"
-                        android:onClick="decHashy"/>
+                        android:layout_height="match_parent" android:id="@+id/plusButtonARH" android:layout_weight="1"
+                        android:onClick="incHashy"/>
             </LinearLayout>
             <TextView
                     android:text="Cargo Ship Hatches"
@@ -138,19 +138,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/autoCSHLayout">
                 <Button
-                        android:text="+"
+                        android:text="-"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonACSH"
-                        android:layout_weight="1" android:onClick="incHashy"/>
+                        android:layout_height="match_parent" android:id="@+id/minusButtonACSH"
+                        android:layout_weight="1" android:onClick="decHashy"/>
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent" android:id="@+id/autoCSH" android:layout_weight="1"
                         android:gravity="center" android:text="0" android:textSize="30sp"/>
                 <Button
-                        android:text="-"
+                        android:text="+"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonACSH"
-                        android:layout_weight="1" android:onClick="decHashy"/>
+                        android:layout_height="match_parent" android:id="@+id/plusButtonACSH"
+                        android:layout_weight="1" android:onClick="incHashy"/>
             </LinearLayout>
             <TextView
                     android:text="Tele-OP Phase"
@@ -166,19 +166,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" android:id="@+id/teleOPCSCLayout">
                 <Button
-                        android:text="+"
+                        android:text="-"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonTCSC" android:layout_weight="1"
-                        android:onClick="incHashy"/>
+                        android:layout_height="match_parent" android:id="@+id/minusButtonTCSC" android:layout_weight="1"
+                        android:onClick="decHashy"/>
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/teleOPCSC" android:layout_weight="1"
                         android:gravity="center" android:text="0" android:textSize="30sp"/>
                 <Button
-                        android:text="-"
+                        android:text="+"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonTCSC"
-                        android:layout_weight="1" android:onClick="decHashy"/>
+                        android:layout_height="match_parent" android:id="@+id/plusButtonTCSC"
+                        android:layout_weight="1" android:onClick="incHashy"/>
             </LinearLayout>
             <TextView
                     android:text="Rocket Cargo"
@@ -189,19 +189,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" android:id="@+id/teleOPRCLayout">
                 <Button
-                        android:text="+"
+                        android:text="-"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonTRC" android:layout_weight="1"
-                        android:onClick="incHashy"/>
+                        android:layout_height="match_parent" android:id="@+id/minusButtonTRC" android:layout_weight="1"
+                        android:onClick="decHashy"/>
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent" android:id="@+id/teleOPRC" android:layout_weight="1"
                         android:gravity="center" android:text="0" android:textSize="30sp"/>
                 <Button
-                        android:text="-"
+                        android:text="+"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonTRC" android:layout_weight="1"
-                        android:onClick="decHashy"/>
+                        android:layout_height="match_parent" android:id="@+id/plusButtonTRC" android:layout_weight="1"
+                        android:onClick="incHashy"/>
             </LinearLayout>
             <TextView
                     android:text="Rocket Hatches"
@@ -212,19 +212,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" android:id="@+id/teleOPRHLayout">
                 <Button
-                        android:text="+"
+                        android:text="-"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonTRH" android:layout_weight="1"
-                        android:onClick="incHashy"/>
+                        android:layout_height="match_parent" android:id="@+id/minusButtonTRH" android:layout_weight="1"
+                        android:onClick="decHashy"/>
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent" android:id="@+id/teleOPRH" android:layout_weight="1"
                         android:gravity="center" android:text="0" android:textSize="30sp"/>
                 <Button
-                        android:text="-"
+                        android:text="+"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonTRH" android:layout_weight="1"
-                        android:onClick="decHashy"/>
+                        android:layout_height="match_parent" android:id="@+id/plusButtonTRH" android:layout_weight="1"
+                        android:onClick="incHashy"/>
             </LinearLayout>
             <TextView
                     android:text="Cargo Ship Hatches"
@@ -235,19 +235,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" android:id="@+id/teleOPCSHLayout">
                 <Button
-                        android:text="+"
+                        android:text="-"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonTCSH"
-                        android:layout_weight="1" android:onClick="incHashy"/>
+                        android:layout_height="match_parent" android:id="@+id/minusButtonTCSH"
+                        android:layout_weight="1" android:onClick="decHashy"/>
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/teleOPCSH" android:layout_weight="1"
                         android:gravity="center" android:text="0" android:textSize="30sp"/>
                 <Button
-                        android:text="-"
+                        android:text="+"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonTCSH"
-                        android:layout_weight="1" android:onClick="decHashy"/>
+                        android:layout_height="match_parent" android:id="@+id/plusButtonTCSH"
+                        android:layout_weight="1" android:onClick="incHashy"/>
             </LinearLayout>
             <LinearLayout
                     android:orientation="horizontal"

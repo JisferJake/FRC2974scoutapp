@@ -51,7 +51,7 @@ public class ScoutingForm extends AppCompatActivity {
 
         //Drop Menu of of Alliance Positions
         Spinner dropPos = findViewById(R.id.dropPosition);
-        String[] positions = {"Position", "Close", "Middle", "Far"};
+        String[] positions = {"Position", "Right", "Middle", "Left"};
         ArrayAdapter<String> dropPositions = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, positions);
         dropPos.setAdapter(dropPositions);
 
