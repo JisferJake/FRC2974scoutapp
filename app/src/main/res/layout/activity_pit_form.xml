@@ -165,6 +165,10 @@
                     android:text="Take Picture"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/picButton" android:onClick="takePicture"/>
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:id="@+id/robotImage"/>
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

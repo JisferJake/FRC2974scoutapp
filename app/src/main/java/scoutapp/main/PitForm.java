@@ -12,24 +12,6 @@ import android.widget.Spinner;
 
 public class PitForm extends AppCompatActivity {
 
-    static final int REQUEST_IMAGE_CAPTURE = 1;
-
-    private void dispatchTakePictureIntent(){
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if(takePictureIntent.resolveActivity(getPackageManager()) != null){
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
-    }
-
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        ImageView robotPicture = findViewById(R.id.robotImage);
-        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            robotPicture.setImageBitmap(imageBitmap);
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +31,24 @@ public class PitForm extends AppCompatActivity {
         String[] intakes = {"Intake", "Drop Center", "Mecanum", "Omni-H", "Butterfly", "Swerve"};
         ArrayAdapter<String> dropIntakes = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, intakes);
         dropIntake.setAdapter(dropIntakes);
+    }
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+
+    private void dispatchTakePictureIntent(){
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if(takePictureIntent.resolveActivity(getPackageManager()) != null){
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        ImageView robotPicture = findViewById(R.id.robotImage);
+        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            robotPicture.setImageBitmap(imageBitmap);
+        }
     }
 
     public void takePicture(View view){
