@@ -54,7 +54,7 @@
                 <CheckBox
                         android:text="has Auton?"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/checkBox" android:layout_weight="1"/>
+                        android:layout_height="wrap_content" android:id="@+id/auton" android:layout_weight="1"/>
                 <CheckBox
                         android:text="Passed Hab Line?"
                         android:layout_width="wrap_content"
@@ -256,7 +256,7 @@
                 <CheckBox
                         android:text="Played Defense?"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/checkBox2" android:layout_weight="1"/>
+                        android:layout_height="wrap_content" android:id="@+id/defense" android:layout_weight="1"/>
             </LinearLayout>
             <TextView
                     android:text="End Game"
