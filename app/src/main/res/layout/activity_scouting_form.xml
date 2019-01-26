@@ -294,6 +294,10 @@
                     android:inputType="textMultiLine"
                     android:ems="10"
                     android:id="@+id/comments"/>
+            <Button
+                    android:text="Export"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/Export" android:onClick="export"/>
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
