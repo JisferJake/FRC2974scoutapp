@@ -60,98 +60,150 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/habLine" android:layout_weight="1"/>
             </LinearLayout>
-            <TextView
-                    android:text="Cargo Ship Cargo"
+            <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/textView21"/>
-            <LinearLayout
-                    android:orientation="horizontal"
+                    android:layout_height="197dp">
+
+                <ImageView
+                        android:layout_width="195dp"
+                        android:layout_height="144dp" app:srcCompat="@drawable/CargoShipSide"
+                        android:id="@+id/leftCargoShipImg"
+                        android:rotation="90" android:layout_alignParentStart="true"
+                        android:layout_marginStart="14dp"
+                        android:layout_alignParentBottom="true" android:layout_marginBottom="16dp"/>
+                <ImageView
+                        android:layout_width="239dp"
+                        android:layout_height="105dp" app:srcCompat="@drawable/CargoShipSide"
+                        android:id="@+id/rightCargoShipImg" android:rotation="270"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"/>
+                <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="90dp" app:srcCompat="@drawable/CargoShipFront"
+                        android:id="@+id/cargoShipFrontImg" android:rotation="180"
+                        android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true" android:layout_marginTop="22dp"
+                        android:id="@+id/leftTopACSH" android:layout_marginStart="25dp"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/leftMidACSC"
+                        android:layout_alignTop="@+id/leftMidACSH" android:layout_alignStart="@+id/leftTopACSC"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/leftBotACSC"
+                        android:layout_alignTop="@+id/cargoShipFrontImg" android:layout_alignStart="@+id/leftMidACSC"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/leftFrontACSC"
+                        android:layout_alignTop="@+id/cargoShipFrontImg" android:layout_toEndOf="@+id/leftMidACSC"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rightFrontACSC"
+                        android:layout_alignTop="@+id/cargoShipFrontImg" android:layout_toEndOf="@+id/leftFrontACSC"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rightBotACSC"
+                        android:layout_alignTop="@+id/cargoShipFrontImg" android:layout_toEndOf="@+id/rightFrontACSC"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rightMidACSC"
+                        android:layout_alignTop="@+id/leftMidACSH" android:layout_toEndOf="@+id/rightFrontACSC"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rightTopACSC"
+                        android:layout_alignTop="@+id/leftTopACSH" android:layout_toEndOf="@+id/rightFrontACSC"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_alignParentStart="true"
+                        android:id="@+id/leftTopACSC" android:layout_marginStart="126dp"
+                        android:layout_alignTop="@+id/leftTopACSH"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/leftFrontACSH" android:layout_alignBottom="@+id/leftCargoShipImg"
+                        android:layout_alignStart="@+id/cargoShipFrontImg"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rightFrontACSH" android:layout_alignBottom="@+id/leftCargoShipImg"
+                        android:layout_alignEnd="@+id/cargoShipFrontImg"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true" android:layout_marginTop="65dp"
+                        android:id="@+id/leftMidACSH" android:layout_alignStart="@+id/leftTopACSH"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/leftBotACSH" android:layout_alignTop="@+id/cargoShipFrontImg"
+                        android:layout_alignStart="@+id/leftTopACSH"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rightBotACSH" android:layout_alignParentEnd="true" android:layout_marginEnd="27dp"
+                        android:layout_alignTop="@+id/cargoShipFrontImg"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rightMidACSH" android:layout_alignTop="@+id/leftMidACSH"
+                        android:layout_alignStart="@+id/rightBotACSH"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rightTopACSH" android:layout_alignTop="@+id/leftTopACSH"
+                        android:layout_alignStart="@+id/rightBotACSH"/>
+            </RelativeLayout>
+            <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:id="@+id/autoCSCLayout">
-                <Button
-                        android:text="-"
+                    android:layout_height="233dp">
+
+                <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonACSC" android:layout_weight="1"
-                        android:onClick="decHashy"/>
-                <TextView
+                        android:layout_height="wrap_content" app:srcCompat="@drawable/Rocket"
+                        android:id="@+id/rocketImage" android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="true"/>
+                <CheckBox
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/autoCSC" android:layout_weight="1"
-                        android:gravity="center" android:text="0" android:textSize="30sp"/>
-                <Button
-                        android:text="+"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/leftMidARH"
+                        android:layout_alignParentBottom="true" android:layout_marginBottom="68dp"
+                        android:layout_alignStart="@+id/leftTopARH"/>
+                <CheckBox
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonACSC"
-                        android:layout_weight="1" android:onClick="incHashy"/>
-            </LinearLayout>
-            <TextView
-                    android:text="Rocket Cargo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/textView20"/>
-            <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:id="@+id/autoRCLayout">
-                <Button
-                        android:text="-"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rightTopARH" android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="119dp" android:layout_alignTop="@+id/leftTopARH"/>
+                <CheckBox
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:layout_weight="1"
-                        android:onClick="decHashy" android:id="@+id/minusButtonARC"/>
-                <TextView
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rightMidARH" android:layout_alignTop="@+id/leftMidARH"
+                        android:layout_alignStart="@+id/rightTopARH"/>
+                <CheckBox
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/autoRC" android:layout_weight="1"
-                        android:gravity="center" android:text="0" android:textSize="30sp"/>
-                <Button
-                        android:text="+"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/leftBotARH" android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="24dp" android:layout_alignStart="@+id/leftMidARH"/>
+                <CheckBox
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonARC" android:layout_weight="1"
-                        android:onClick="incHashy"/>
-            </LinearLayout>
-            <TextView
-                    android:text="Rocket Hatches"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/rocketHatches"/>
-            <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:id="@+id/autoRHLayout">
-                <Button
-                        android:text="-"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rightBotARH" android:layout_alignTop="@+id/leftBotARH"
+                        android:layout_alignStart="@+id/rightMidARH"/>
+                <CheckBox
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonARH" android:layout_weight="1"
-                        android:onClick="decHashy"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/autoRH" android:layout_weight="1"
-                        android:gravity="center" android:text="0" android:textSize="30sp"/>
-                <Button
-                        android:text="+"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonARH" android:layout_weight="1"
-                        android:onClick="incHashy"/>
-            </LinearLayout>
-            <TextView
-                    android:text="Cargo Ship Hatches"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/cargoShipHatches"/>
-            <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/autoCSHLayout">
-                <Button
-                        android:text="-"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonACSH"
-                        android:layout_weight="1" android:onClick="decHashy"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/autoCSH" android:layout_weight="1"
-                        android:gravity="center" android:text="0" android:textSize="30sp"/>
-                <Button
-                        android:text="+"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonACSH"
-                        android:layout_weight="1" android:onClick="incHashy"/>
-            </LinearLayout>
+                        android:layout_height="wrap_content" android:layout_alignParentStart="true"
+                        android:layout_marginStart="120dp" android:layout_alignParentTop="true"
+                        android:layout_marginTop="84dp" android:id="@+id/leftTopARH"/>
+            </RelativeLayout>
             <TextView
                     android:text="Tele-OP Phase"
                     android:layout_width="match_parent"

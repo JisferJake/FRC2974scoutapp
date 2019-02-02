@@ -3,7 +3,8 @@ package scoutapp.main;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Export extends AppCompatActivity {
+public class
+Export extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

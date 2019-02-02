@@ -91,6 +91,8 @@ public class ScoutingForm extends AppCompatActivity {
         }
     }
 
+
+
     /**
      *
      * @return a boolean array of all the check marks on
