@@ -23,9 +23,9 @@ public class ScoutingForm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scouting_form);
 
-        int[] plusButtons = {R.id.plusButtonACSC, R.id.plusButtonACSH, R.id.plusButtonARH, R.id.plusButtonARC, R.id.plusButtonTCSC, R.id.plusButtonTCSH, R.id.plusButtonTRC, R.id.plusButtonTRH};
-        int[] minusButtons = {R.id.minusButtonACSC, R.id.minusButtonACSH, R.id.minusButtonARH, R.id.minusButtonARC, R.id.minusButtonTCSC, R.id.minusButtonTCSH, R.id.minusButtonTRC, R.id.minusButtonTRH};
-        int[] textview = {R.id.autoCSC, R.id.autoCSH, R.id.autoRH, R.id.autoRC, R.id.teleOPCSC, R.id.teleOPCSH, R.id.teleOPRC, R.id.teleOPRH};
+        int[] plusButtons = {R.id.plusButtonTCSC, R.id.plusButtonTCSH, R.id.plusButtonTRC, R.id.plusButtonTRH};
+        int[] minusButtons = {R.id.minusButtonTCSC, R.id.minusButtonTCSH, R.id.minusButtonTRC, R.id.minusButtonTRH};
+        int[] textview = {R.id.teleOPCSC, R.id.teleOPCSH, R.id.teleOPRC, R.id.teleOPRH};
         String[] names = { "Auto Cargo Ship Cargo", "Auto Cargo Ship Hatches", "Auto Rocket Hatches", "Auto Rocket Cargo", "Teleop Cargo Ship Cargo", "Teleop Cargo Ship Hatches", "Teleop Rocket Cargo", "Teleop Rocket Hatches"};
         buttonsToAtomicInt = new HashMap<>();
         buttonsToTextView = new HashMap<>();

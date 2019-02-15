@@ -9,7 +9,7 @@
 
         <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" app:srcCompat="@drawable/Rocket" android:id="@+id/imageView2"/>
+                android:layout_height="match_parent" app:srcCompat="@drawable/rocket" android:id="@+id/imageView2"/>
         <Button
                 android:text="Gamer"
                 android:layout_width="wrap_content"

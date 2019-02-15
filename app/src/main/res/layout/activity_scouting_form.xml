@@ -12,7 +12,7 @@
             android:layout_height="match_parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="1.0">
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -66,102 +66,121 @@
 
                 <ImageView
                         android:layout_width="195dp"
-                        android:layout_height="144dp" app:srcCompat="@drawable/CargoShipSide"
+                        android:layout_height="144dp" app:srcCompat="@drawable/cargoshipside"
                         android:id="@+id/leftCargoShipImg"
                         android:rotation="90" android:layout_alignParentStart="true"
                         android:layout_marginStart="14dp"
-                        android:layout_alignParentBottom="true" android:layout_marginBottom="16dp"/>
+                        android:layout_alignParentBottom="true" android:layout_marginBottom="16dp"
+                        android:layout_alignParentLeft="true" android:layout_marginLeft="14dp"/>
                 <ImageView
                         android:layout_width="239dp"
-                        android:layout_height="105dp" app:srcCompat="@drawable/CargoShipSide"
+                        android:layout_height="105dp" app:srcCompat="@drawable/cargoshipside"
                         android:id="@+id/rightCargoShipImg" android:rotation="270"
                         android:layout_alignParentEnd="true"
-                        android:layout_alignParentTop="true"/>
+                        android:layout_alignParentTop="true" android:layout_alignParentRight="true"/>
                 <ImageView
                         android:layout_width="150dp"
-                        android:layout_height="90dp" app:srcCompat="@drawable/CargoShipFront"
+                        android:layout_height="90dp" app:srcCompat="@drawable/cargoshipfront"
                         android:id="@+id/cargoShipFrontImg" android:rotation="180"
                         android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"/>
                 <CheckBox
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true" android:layout_marginTop="22dp"
-                        android:id="@+id/leftTopACSH" android:layout_marginStart="25dp"/>
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true" android:layout_marginTop="23dp"
+                        android:id="@+id/leftTopACSH"
+                        android:layout_alignParentStart="true" android:layout_marginStart="85dp"
+                        android:layout_marginLeft="85dp" android:layout_alignParentLeft="true"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/leftMidACSC"
-                        android:layout_alignTop="@+id/leftMidACSH" android:layout_alignStart="@+id/leftTopACSC"/>
+                        android:layout_alignTop="@+id/leftMidACSH"
+                        android:layout_alignParentStart="true" android:layout_marginStart="127dp"
+                        android:layout_alignParentLeft="true" android:layout_marginLeft="127dp"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/leftBotACSC"
-                        android:layout_alignTop="@+id/cargoShipFrontImg" android:layout_alignStart="@+id/leftMidACSC"/>
+                        android:layout_alignTop="@+id/cargoShipFrontImg" android:layout_alignStart="@+id/leftMidACSC"
+                        android:layout_alignLeft="@+id/leftMidACSC"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/leftFrontACSC"
-                        android:layout_alignTop="@+id/cargoShipFrontImg" android:layout_toEndOf="@+id/leftMidACSC"/>
+                        android:layout_below="@+id/leftMidACSC" android:layout_toStartOf="@+id/rightFrontACSC"
+                        android:layout_toLeftOf="@+id/rightFrontACSC"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/rightFrontACSC"
-                        android:layout_alignTop="@+id/cargoShipFrontImg" android:layout_toEndOf="@+id/leftFrontACSC"/>
+                        android:layout_below="@+id/leftMidACSC" android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="266dp" android:layout_marginRight="266dp"
+                        android:layout_alignParentRight="true"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/rightBotACSC"
-                        android:layout_alignTop="@+id/cargoShipFrontImg" android:layout_toEndOf="@+id/rightFrontACSC"/>
+                        android:layout_alignTop="@+id/cargoShipFrontImg"
+                        android:layout_alignStart="@+id/rightMidACSC" android:layout_alignLeft="@+id/rightMidACSC"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/rightMidACSC"
-                        android:layout_alignTop="@+id/leftMidACSH" android:layout_toEndOf="@+id/rightFrontACSC"/>
+                        android:layout_alignTop="@+id/leftMidACSC"
+                        android:layout_alignStart="@+id/rightTopACSC" android:layout_alignLeft="@+id/rightTopACSC"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/rightTopACSC"
-                        android:layout_alignTop="@+id/leftTopACSH" android:layout_toEndOf="@+id/rightFrontACSC"/>
-                <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:layout_alignParentStart="true"
-                        android:id="@+id/leftTopACSC" android:layout_marginStart="126dp"
-                        android:layout_alignTop="@+id/leftTopACSH"/>
+                        android:layout_alignTop="@+id/leftTopACSH"
+                        android:layout_alignParentEnd="true" android:layout_marginEnd="134dp"
+                        android:layout_marginRight="134dp" android:layout_alignParentRight="true"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/leftFrontACSH" android:layout_alignBottom="@+id/leftCargoShipImg"
-                        android:layout_alignStart="@+id/cargoShipFrontImg"/>
+                        android:id="@+id/leftTopACSC"
+                        android:layout_alignTop="@+id/leftTopACSH"
+                        android:layout_alignStart="@+id/leftMidACSC" android:layout_alignLeft="@+id/leftMidACSC"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/rightFrontACSH" android:layout_alignBottom="@+id/leftCargoShipImg"
-                        android:layout_alignEnd="@+id/cargoShipFrontImg"/>
+                        android:id="@+id/leftFrontACSH"
+                        android:layout_below="@+id/rightFrontACSC" android:layout_toStartOf="@+id/rightFrontACSC"
+                        android:layout_toLeftOf="@+id/rightFrontACSC"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rightFrontACSH"
+                        android:layout_below="@+id/rightFrontACSC" android:layout_alignStart="@+id/rightFrontACSC"
+                        android:layout_alignLeft="@+id/rightFrontACSC"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true" android:layout_marginTop="65dp"
-                        android:id="@+id/leftMidACSH" android:layout_alignStart="@+id/leftTopACSH"/>
+                        android:id="@+id/leftMidACSH" android:layout_alignStart="@+id/leftTopACSH"
+                        android:layout_alignLeft="@+id/leftTopACSH"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/leftBotACSH" android:layout_alignTop="@+id/cargoShipFrontImg"
-                        android:layout_alignStart="@+id/leftTopACSH"/>
+                        android:layout_alignStart="@+id/leftTopACSH" android:layout_alignLeft="@+id/leftTopACSH"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/rightBotACSH" android:layout_alignParentEnd="true" android:layout_marginEnd="27dp"
-                        android:layout_alignTop="@+id/cargoShipFrontImg"/>
+                        android:id="@+id/rightBotACSH"
+                        android:layout_below="@+id/rightCargoShipImg" android:layout_alignStart="@+id/rightMidACSH"
+                        android:layout_alignLeft="@+id/rightMidACSH" tools:ignore="RtlCompat"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/rightMidACSH" android:layout_alignTop="@+id/leftMidACSH"
-                        android:layout_alignStart="@+id/rightBotACSH"/>
+                        android:id="@+id/rightMidACSH" android:layout_alignTop="@+id/leftMidACSC"
+                        android:layout_alignStart="@+id/rightTopACSH" android:layout_alignLeft="@+id/rightTopACSH"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/rightTopACSH" android:layout_alignTop="@+id/leftTopACSH"
-                        android:layout_alignStart="@+id/rightBotACSH"/>
+                        android:layout_alignParentEnd="true" android:layout_marginEnd="92dp" android:layout_marginRight="92dp"
+                        android:layout_alignParentRight="true"/>
             </RelativeLayout>
             <RelativeLayout
                     android:layout_width="match_parent"
@@ -169,7 +188,7 @@
 
                 <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" app:srcCompat="@drawable/Rocket"
+                        android:layout_height="wrap_content" app:srcCompat="@drawable/rocket"
                         android:id="@+id/rocketImage" android:layout_centerHorizontal="true"
                         android:layout_alignParentTop="true"/>
                 <CheckBox
@@ -177,32 +196,64 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/leftMidARH"
                         android:layout_alignParentBottom="true" android:layout_marginBottom="68dp"
-                        android:layout_alignStart="@+id/leftTopARH"/>
+                        android:layout_alignStart="@+id/leftTopARH" android:layout_alignLeft="@+id/leftTopARH"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/rightTopARH" android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="119dp" android:layout_alignTop="@+id/leftTopARH"/>
+                        android:id="@+id/rightTopARH"
+                        android:layout_alignTop="@+id/leftTopARH"
+                        android:layout_alignEnd="@+id/rocketImage" android:layout_alignRight="@+id/rocketImage"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/rightMidARH" android:layout_alignTop="@+id/leftMidARH"
-                        android:layout_alignStart="@+id/rightTopARH"/>
+                        android:layout_alignStart="@+id/rightTopARH" android:layout_alignLeft="@+id/rightTopARH"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/leftBotARH" android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="24dp" android:layout_alignStart="@+id/leftMidARH"/>
+                        android:layout_marginBottom="24dp" android:layout_alignStart="@+id/leftMidARH"
+                        android:layout_alignLeft="@+id/leftMidARH"/>
                 <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/rightBotARH" android:layout_alignTop="@+id/leftBotARH"
-                        android:layout_alignStart="@+id/rightMidARH"/>
+                        android:layout_alignStart="@+id/rightMidARH" android:layout_alignLeft="@+id/rightMidARH"/>
                 <CheckBox
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="86dp" android:id="@+id/leftTopARH"
+                        android:layout_alignStart="@+id/rocketImage" android:layout_alignLeft="@+id/rocketImage"/>
+                <TextView
+                        android:text="Alliance Wall"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:layout_alignParentStart="true"
-                        android:layout_marginStart="120dp" android:layout_alignParentTop="true"
-                        android:layout_marginTop="84dp" android:id="@+id/leftTopARH"/>
+                        android:layout_marginStart="27dp" android:layout_alignParentTop="true"
+                        android:layout_marginTop="19dp" android:id="@+id/textView"
+                        android:layout_alignParentLeft="true" android:layout_marginLeft="27dp"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="29dp" android:layout_alignTop="@+id/textView"
+                        android:id="@+id/textView3" android:text="Rest of Field"
+                        android:layout_alignParentRight="true" android:layout_marginRight="29dp"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/midARC" android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/rightTopARH"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-68dp"
+                        android:id="@+id/botARC" android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/leftMidARH"/>
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_alignParentTop="true"
+                        android:layout_marginTop="70dp"
+                        android:id="@+id/topARC" android:layout_centerHorizontal="true"/>
             </RelativeLayout>
             <TextView
                     android:text="Tele-OP Phase"
