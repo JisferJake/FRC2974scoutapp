@@ -10,7 +10,8 @@
         <Button
                 android:text="Scouting Export"
                 android:layout_width="match_parent"
-                android:layout_height="127dp" android:id="@+id/exportScoutingForm"/>
+                android:layout_height="127dp" android:id="@+id/exportScoutingForm"
+                android:onClick="exportScoutingForm"/>
         <Button
                 android:text="Pit Export"
                 android:layout_width="match_parent"
