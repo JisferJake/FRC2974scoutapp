@@ -8,300 +8,513 @@
         tools:context=".ScoutingForm">
 
     <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.0">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
         <LinearLayout
-                android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/preMatch"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            <TextView
-                    android:text="Pre-Match"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/preMatch"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+                android:layout_height="wrap_content"
+                android:text="Pre-Match"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
             <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:id="@+id/PreMatchInfo">
+                android:id="@+id/PreMatchInfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
                 <EditText
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:ems="10"
-                        android:id="@+id/teamNumber" android:layout_weight="1" android:hint="Team #"/>
+                    android:id="@+id/teamNumber"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Team #"
+                    android:inputType="number" />
+
                 <Spinner
-                        android:layout_width="157dp"
-                        android:layout_height="match_parent" android:id="@+id/dropColor" android:layout_weight="1"
-                />
+                    android:id="@+id/dropColor"
+                    android:layout_width="157dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
                 <Spinner
-                        android:layout_width="164dp"
-                        android:layout_height="match_parent" android:id="@+id/dropPosition" android:layout_weight="1"/>
+                    android:id="@+id/dropPosition"
+                    android:layout_width="164dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
             </LinearLayout>
+
             <TextView
-                    android:text="Autonomous"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/Autonomous"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+                android:id="@+id/Autonomous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Autonomous"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
             <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:layout_weight="1"
-                    tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="57dp" android:id="@+id/habLineLayout">
+                android:id="@+id/habLineLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="57dp">
+
                 <CheckBox
-                        android:text="has Auton?"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/auton" android:layout_weight="1"/>
+                    android:id="@+id/auton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="has Auton?" />
+
                 <CheckBox
-                        android:text="Passed Hab Line?"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/habLine" android:layout_weight="1"/>
+                    android:id="@+id/habLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Passed Hab Line?" />
             </LinearLayout>
+
             <TextView
-                    android:text="Cargo Ship Cargo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/textView21"/>
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cargo Ship Cargo" />
+
             <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:id="@+id/autoCSCLayout">
+                android:id="@+id/autoCSCLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
                 <Button
-                        android:text="-"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonACSC" android:layout_weight="1"
-                        android:onClick="decHashy"/>
+                    android:id="@+id/minusButtonACSC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="decHashy"
+                    android:text="-" />
+
                 <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/autoCSC" android:layout_weight="1"
-                        android:gravity="center" android:text="0" android:textSize="30sp"/>
+                    android:id="@+id/autoCSC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="30sp" />
+
                 <Button
-                        android:text="+"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonACSC"
-                        android:layout_weight="1" android:onClick="incHashy"/>
+                    android:id="@+id/plusButtonACSC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="incHashy"
+                    android:text="+" />
             </LinearLayout>
+
             <TextView
-                    android:text="Rocket Cargo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/textView20"/>
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rocket Cargo" />
+
             <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:id="@+id/autoRCLayout">
+                android:id="@+id/autoRCLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
                 <Button
-                        android:text="-"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:layout_weight="1"
-                        android:onClick="decHashy" android:id="@+id/minusButtonARC"/>
+                    android:id="@+id/minusButtonARC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="decHashy"
+                    android:text="-" />
+
                 <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/autoRC" android:layout_weight="1"
-                        android:gravity="center" android:text="0" android:textSize="30sp"/>
+                    android:id="@+id/autoRC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="30sp" />
+
                 <Button
-                        android:text="+"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonARC" android:layout_weight="1"
-                        android:onClick="incHashy"/>
+                    android:id="@+id/plusButtonARC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="incHashy"
+                    android:text="+" />
             </LinearLayout>
+
             <TextView
-                    android:text="Rocket Hatches"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/rocketHatches"/>
+                android:id="@+id/rocketHatches"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rocket Hatches" />
+
             <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:id="@+id/autoRHLayout">
+                android:id="@+id/autoRHLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
                 <Button
-                        android:text="-"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonARH" android:layout_weight="1"
-                        android:onClick="decHashy"/>
+                    android:id="@+id/minusButtonARH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="decHashy"
+                    android:text="-" />
+
                 <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/autoRH" android:layout_weight="1"
-                        android:gravity="center" android:text="0" android:textSize="30sp"/>
+                    android:id="@+id/autoRH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="30sp" />
+
                 <Button
-                        android:text="+"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonARH" android:layout_weight="1"
-                        android:onClick="incHashy"/>
+                    android:id="@+id/plusButtonARH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="incHashy"
+                    android:text="+" />
             </LinearLayout>
+
             <TextView
-                    android:text="Cargo Ship Hatches"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/cargoShipHatches"/>
+                android:id="@+id/cargoShipHatches"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cargo Ship Hatches" />
+
             <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/autoCSHLayout">
+                android:id="@+id/autoCSHLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
                 <Button
-                        android:text="-"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonACSH"
-                        android:layout_weight="1" android:onClick="decHashy"/>
+                    android:id="@+id/minusButtonACSH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="decHashy"
+                    android:text="-" />
+
                 <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/autoCSH" android:layout_weight="1"
-                        android:gravity="center" android:text="0" android:textSize="30sp"/>
+                    android:id="@+id/autoCSH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="30sp" />
+
                 <Button
-                        android:text="+"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonACSH"
-                        android:layout_weight="1" android:onClick="incHashy"/>
+                    android:id="@+id/plusButtonACSH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="incHashy"
+                    android:text="+" />
             </LinearLayout>
+
             <TextView
-                    android:text="Tele-OP Phase"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/teleOP" android:layout_weight="1"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
-            <TextView
-                    android:text="Cargo Ship Cargo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/cargoShipCargo"/>
+                android:id="@+id/teleOP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tele-OP Phase"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
             <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:id="@+id/teleOPCSCLayout">
+                android:id="@+id/autoTMlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Chronometer
+                    android:id="@+id/chronometer"
+                    android:textSize="60sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
                 <Button
-                        android:text="-"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonTCSC" android:layout_weight="1"
-                        android:onClick="decHashy"/>
+                    android:id="@+id/tmStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="startButtonClick"
+                    android:text="START" />
+
+                <Button
+                    android:id="@+id/tmReset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="resetButtonClick"
+                    android:text="RESET" />
+
+                <Button
+                    android:id="@+id/tmLap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="lapButtonClick"
+                    android:text="LAP" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/cargoShipCargo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cargo Ship Cargo" />
+
+            <LinearLayout
+                android:id="@+id/teleOPCSCLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/minusButtonTCSC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="decHashy"
+                    android:text="-" />
+
                 <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/teleOPCSC" android:layout_weight="1"
-                        android:gravity="center" android:text="0" android:textSize="30sp"/>
+                    android:id="@+id/teleOPCSC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="30sp" />
+
                 <Button
-                        android:text="+"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonTCSC"
-                        android:layout_weight="1" android:onClick="incHashy"/>
+                    android:id="@+id/plusButtonTCSC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="incHashy"
+                    android:text="+" />
             </LinearLayout>
+
             <TextView
-                    android:text="Rocket Cargo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/rocketCargo"/>
+                android:id="@+id/rocketCargo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rocket Cargo" />
+
             <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:id="@+id/teleOPRCLayout">
+                android:id="@+id/teleOPRCLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
                 <Button
-                        android:text="-"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonTRC" android:layout_weight="1"
-                        android:onClick="decHashy"/>
+                    android:id="@+id/minusButtonTRC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="decHashy"
+                    android:text="-" />
+
                 <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/teleOPRC" android:layout_weight="1"
-                        android:gravity="center" android:text="0" android:textSize="30sp"/>
+                    android:id="@+id/teleOPRC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="30sp" />
+
                 <Button
-                        android:text="+"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonTRC" android:layout_weight="1"
-                        android:onClick="incHashy"/>
+                    android:id="@+id/plusButtonTRC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="incHashy"
+                    android:text="+" />
             </LinearLayout>
+
             <TextView
-                    android:text="Rocket Hatches"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/rocketHatchesTitle"/>
+                android:id="@+id/rocketHatchesTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rocket Hatches" />
+
             <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:id="@+id/teleOPRHLayout">
+                android:id="@+id/teleOPRHLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
                 <Button
-                        android:text="-"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonTRH" android:layout_weight="1"
-                        android:onClick="decHashy"/>
+                    android:id="@+id/minusButtonTRH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="decHashy"
+                    android:text="-" />
+
                 <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/teleOPRH" android:layout_weight="1"
-                        android:gravity="center" android:text="0" android:textSize="30sp"/>
+                    android:id="@+id/teleOPRH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="30sp" />
+
                 <Button
-                        android:text="+"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonTRH" android:layout_weight="1"
-                        android:onClick="incHashy"/>
+                    android:id="@+id/plusButtonTRH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="incHashy"
+                    android:text="+" />
             </LinearLayout>
+
             <TextView
-                    android:text="Cargo Ship Hatches"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/cargoShipHatchesTitle"/>
+                android:id="@+id/cargoShipHatchesTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cargo Ship Hatches" />
+
             <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:id="@+id/teleOPCSHLayout">
+                android:id="@+id/teleOPCSHLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
                 <Button
-                        android:text="-"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/minusButtonTCSH"
-                        android:layout_weight="1" android:onClick="decHashy"/>
+                    android:id="@+id/minusButtonTCSH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="decHashy"
+                    android:text="-" />
+
                 <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/teleOPCSH" android:layout_weight="1"
-                        android:gravity="center" android:text="0" android:textSize="30sp"/>
+                    android:id="@+id/teleOPCSH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="30sp" />
+
                 <Button
-                        android:text="+"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/plusButtonTCSH"
-                        android:layout_weight="1" android:onClick="incHashy"/>
+                    android:id="@+id/plusButtonTCSH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="incHashy"
+                    android:text="+" />
             </LinearLayout>
+
             <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:id="@+id/playedDefense">
+                android:id="@+id/playedDefense"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
                 <CheckBox
-                        android:text="Played Defense?"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/defense" android:layout_weight="1"/>
+                    android:id="@+id/defense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Played Defense?" />
             </LinearLayout>
+
             <TextView
-                    android:text="End Game"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/endGameName"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+                android:id="@+id/endGameName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="End Game"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
             <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:id="@+id/levelClimbedTo">
+                android:id="@+id/levelClimbedTo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
                 <Spinner
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/dropClimb" android:layout_weight="1"/>
-            </LinearLayout>
-            <CheckBox
-                    android:text="Helped Another Climb?"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/checkAssist"/>
-            <TextView
-                    android:text="Disconnected?"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/connectionDuringMatch"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
-            <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/dropConnection"/>
-            <CheckBox
-                    android:text="Unstable Robot?"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/unstable"/>
-            <TextView
-                    android:text="Other Comments"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/otherComments"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
-            <EditText
+                    android:id="@+id/dropClimb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textMultiLine"
-                    android:ems="10"
-                    android:id="@+id/comments"/>
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/checkAssist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Helped Another Climb?" />
+
+            <TextView
+                android:id="@+id/connectionDuringMatch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Disconnected?"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <Spinner
+                android:id="@+id/dropConnection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/unstable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Unstable Robot?" />
+
+            <TextView
+                android:id="@+id/otherComments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Other Comments"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <EditText
+                android:id="@+id/comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine" />
+
             <Button
-                    android:text="Export"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/Export" android:onClick="export"/>
+                android:id="@+id/Export"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="export"
+                android:text="Export" />
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

@@ -1,5 +1,6 @@
 package scoutapp.main;
 
+import android.os.SystemClock;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,8 +11,9 @@ import android.widget.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import android.widget.Chronometer;
 import java.io.*;
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,11 +25,21 @@ public class ScoutingForm extends AppCompatActivity {
     private Map<Integer, Integer> buttonsToTextView;
     private Map<String, AtomicInteger> numbersToIdentifiers;
 
+    // timer
+    private long lapDuration = 0;
+    private boolean stopClicked = false;
+    private Chronometer chronometer = null;
+    private int[] arr = new int[10];
+    private int numLap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scouting_form);
+
+        chronometer = findViewById(R.id.chronometer);
+        //chronometer.setFormat("00:%s");
 
         int[] plusButtons = {R.id.plusButtonACSC, R.id.plusButtonACSH, R.id.plusButtonARH, R.id.plusButtonARC, R.id.plusButtonTCSC, R.id.plusButtonTCSH, R.id.plusButtonTRC, R.id.plusButtonTRH};
         int[] minusButtons = {R.id.minusButtonACSC, R.id.minusButtonACSH, R.id.minusButtonARH, R.id.minusButtonARC, R.id.minusButtonTCSC, R.id.minusButtonTCSH, R.id.minusButtonTRC, R.id.minusButtonTRH};
@@ -86,6 +98,39 @@ public class ScoutingForm extends AppCompatActivity {
             TextView text = findViewById(buttonsToTextView.get(view.getId()));
             text.setText(buttonsToAtomicInt.get(view.getId()).toString());
         }
+    }
+
+    // the method for when we press the 'start' button
+    public void startButtonClick(View v) {
+
+        //TextView timerText = findViewById(R.id.teleOP);
+        //timerText.setText(Long.toString(SystemClock.elapsedRealtime()));
+
+        chronometer.setBase(SystemClock.elapsedRealtime());
+        //chronometer.setFormat("00:%s");
+        chronometer.start();
+        stopClicked = false;
+    }
+
+    // the method for when we press the 'reset' button
+    public void resetButtonClick(View v) {
+        chronometer.stop();
+        stopClicked = true;
+        lapDuration = 0;
+    }
+
+    public void lapButtonClick(View v) {
+        if (!stopClicked){
+            lapDuration = chronometer.getBase() - SystemClock.elapsedRealtime();
+            chronometer.stop();
+            chronometer.setBase(SystemClock.elapsedRealtime());
+            //chronometer.setFormat("00:%s");
+            chronometer.start();
+        }
+
+        // debug only
+        TextView timerText = findViewById(R.id.teleOP);
+        timerText.setText(Long.toString(lapDuration));
     }
 
     /**
