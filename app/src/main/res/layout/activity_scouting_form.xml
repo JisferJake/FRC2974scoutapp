@@ -22,18 +22,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/preMatch"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/gameNumber" android:hint="Match #"/>
             <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" android:id="@+id/PreMatchInfo">
                 <EditText
-                        android:layout_width="100dp"
+                        android:layout_width="119dp"
                         android:layout_height="wrap_content"
                         android:inputType="number"
                         android:ems="10"
                         android:id="@+id/teamNumber" android:layout_weight="1" android:hint="Team #"/>
                 <Spinner
-                        android:layout_width="157dp"
+                        android:layout_width="116dp"
                         android:layout_height="match_parent" android:id="@+id/dropColor" android:layout_weight="1"
                 />
                 <Spinner

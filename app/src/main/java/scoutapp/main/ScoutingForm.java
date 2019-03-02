@@ -59,7 +59,7 @@ public class ScoutingForm extends AppCompatActivity {
 
         //Drop Menu of of Alliance Positions
         Spinner dropPos = findViewById(R.id.dropPosition);
-        String[] positions = {"Position", "Right", "Middle", "Left"};
+        String[] positions = {"Position", "Right", "Side", "Middle"};
         ArrayAdapter<String> dropPositions = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, positions);
         dropPos.setAdapter(dropPositions);
 
@@ -184,7 +184,8 @@ public class ScoutingForm extends AppCompatActivity {
     public void export(View view) {
         final String DIRECTORY_2974SCOUTINGAPP = "2974ScoutingApp";         //Direction the Scouting App Folder is on the Android.
         System.out.println(Environment.DIRECTORY_DOWNLOADS);
-        File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_2974SCOUTINGAPP), "ScoutingForm" + System.currentTimeMillis() + ".csv");
+        EditText matchNumber = findViewById(R.id.gameNumber);
+        File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_2974SCOUTINGAPP), "ScoutingForm" + matchNumber.getText() + ".csv");
         try {
             file.createNewFile();
             CSV csv = new CSV("Name, data");
