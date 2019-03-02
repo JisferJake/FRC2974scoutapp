@@ -27,9 +27,10 @@ public class ScoutingForm extends AppCompatActivity {
 
     // timer
     private long lapDuration = 0;
+    private long time = SystemClock.elapsedRealtime();
     private boolean stopClicked = false;
     private Chronometer chronometer = null;
-    private int[] arr = new int[10];
+    ArrayList<Double> laps = new ArrayList<Double>();
     private int numLap;
 
     @Override
@@ -106,31 +107,40 @@ public class ScoutingForm extends AppCompatActivity {
         //TextView timerText = findViewById(R.id.teleOP);
         //timerText.setText(Long.toString(SystemClock.elapsedRealtime()));
 
-        chronometer.setBase(SystemClock.elapsedRealtime());
-        //chronometer.setFormat("00:%s");
-        chronometer.start();
-        stopClicked = false;
+        if(!stopClicked) {
+            chronometer.setBase(SystemClock.elapsedRealtime());
+            //chronometer.setFormat("00:%s");
+            chronometer.start();
+            stopClicked = true;
+
+            Button button = findViewById(R.id.tmStart);
+            button.setText("Stop");
+        }
+        else {
+            Button button = findViewById(R.id.tmStart);
+            button.setText("Start");
+            chronometer.stop();
+            stopClicked = false;
+        }
     }
 
     // the method for when we press the 'reset' button
     public void resetButtonClick(View v) {
         chronometer.stop();
+        chronometer.setBase(SystemClock.elapsedRealtime());
         stopClicked = true;
         lapDuration = 0;
     }
 
     public void lapButtonClick(View v) {
-        if (!stopClicked){
-            lapDuration = chronometer.getBase() - SystemClock.elapsedRealtime();
-            chronometer.stop();
-            chronometer.setBase(SystemClock.elapsedRealtime());
-            //chronometer.setFormat("00:%s");
-            chronometer.start();
-        }
-
-        // debug only
-        TextView timerText = findViewById(R.id.teleOP);
-        timerText.setText(Long.toString(lapDuration));
+        System.out.println(SystemClock.elapsedRealtime() - chronometer.getBase());
+        time = chronometer.getBase();
+        chronometer.setBase(SystemClock.elapsedRealtime());
+        //chronometer.setFormat("00:%s");
+        chronometer.start();
+        Button button = findViewById(R.id.tmStart);
+        button.setText("Stop");
+        stopClicked = true;
     }
 
     /**
