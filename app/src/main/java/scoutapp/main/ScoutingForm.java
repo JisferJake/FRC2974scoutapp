@@ -2,11 +2,13 @@ package scoutapp.main;
 
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.*;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -17,16 +19,22 @@ public class ScoutingForm extends AppCompatActivity {
     private Map<Integer, Integer> buttonsToTextView;
     private Map<String, AtomicInteger> numbersToIdentifiers;
 
+    private ArrayList<Double> laps;
+    private Chronometer chronometer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scouting_form);
 
+        chronometer = findViewById(R.id.chronometer);
+        laps = new ArrayList<Double>();
+
         int[] plusButtons = {R.id.plusButtonTCSC, R.id.plusButtonTCSH, R.id.plusButtonTRC, R.id.plusButtonTRH};
         int[] minusButtons = {R.id.minusButtonTCSC, R.id.minusButtonTCSH, R.id.minusButtonTRC, R.id.minusButtonTRH};
         int[] textview = {R.id.teleOPCSC, R.id.teleOPCSH, R.id.teleOPRC, R.id.teleOPRH};
-        String[] names = { "Auto Cargo Ship Cargo", "Auto Cargo Ship Hatches", "Auto Rocket Hatches", "Auto Rocket Cargo", "Teleop Cargo Ship Cargo", "Teleop Cargo Ship Hatches", "Teleop Rocket Cargo", "Teleop Rocket Hatches"};
+        String[] names = {"Teleop Cargo Ship Cargo", "Teleop Cargo Ship Hatches", "Teleop Rocket Cargo", "Teleop Rocket Hatches"};
         buttonsToAtomicInt = new HashMap<>();
         buttonsToTextView = new HashMap<>();
         numbersToIdentifiers = new HashMap<>();
@@ -91,44 +99,84 @@ public class ScoutingForm extends AppCompatActivity {
         }
     }
 
+    public void timerStart(View view) {
+        chronometer.setBase(SystemClock.elapsedRealtime());
+        chronometer.start();
+    }
+
+    public void timerReset(View view) {
+        chronometer.setBase(SystemClock.elapsedRealtime());
+    }
+
+    public void timerLap(View view) {
+        long timeMillis = SystemClock.elapsedRealtime() - chronometer.getBase();
+        System.out.println(timeMillis);
+        double sec = (timeMillis % 1000) / 1000.0;
+        double t = timeMillis / 1000;
+        laps.add(t + sec);
+
+        chronometer.setBase(SystemClock.elapsedRealtime());
+    }
+
+
 
 
     /**
      *
-     * @return a boolean array of all the check marks on
+     * @return a boolean array of all the check marks in this.
      */
     private String[] getBooleans() {
-        int[] ids = {R.id.auton, R.id.habLine, R.id.defense, R.id.unstable, R.id.checkAssist};
-        String[] names = {"Auton", "Hab Line", "Defense", "Unstable", "Helped Another Climb"};
-        String[] rtn = new String[ids.length];
+        int[] ids = {R.id.auton, R.id.habLine, R.id.defense, R.id.unstable, R.id.checkAssist,
+                        R.id.leftBotACSC, R.id.leftBotACSH, R.id.leftBotARH, R.id.leftTopACSC,
+                        R.id.leftTopACSH, R.id.leftTopARH, R.id.leftMidACSC, R.id.leftMidACSH,
+                        R.id.leftMidARH, R.id.leftFrontACSC, R.id.leftFrontACSH, R.id.rightBotACSC,
+                        R.id.rightBotACSH, R.id.rightBotARH, R.id.rightTopACSC, R.id.rightTopACSH,
+                        R.id.rightTopARH, R.id.rightMidACSC, R.id.rightMidACSH, R.id.rightMidARH,
+                        R.id.rightFrontACSC, R.id.rightFrontACSH, R.id.midARC, R.id.botARC, R.id.topARC};
 
-        for(int i = 0; i < rtn.length; i++) {
+        int[] total = new int[2];
+        String[] stings = { "Auto Cargo", "Auto Hatches"};
+        String[] rtn = new String[ids.length + total.length];
+
+        for(int i = 0; i < ids.length; i++) {
             CheckBox check = findViewById(ids[i]);
-            rtn[i] = names[i] +"," + check.isChecked();
+            String name = getResources().getResourceEntryName(ids[i]);
+            rtn[i] =  name + "," + check.isChecked();
+
+            if(check.isChecked()) {
+                if(name.indexOf("C") == name.length() - 1) {
+                    total[0]++;
+                }
+                else
+                    total[1]++;
+            }
         }
+
+        for (int i = 0; i < total.length; i++) {
+            rtn[i + ids.length] = stings[i] + "," + total[i];
+        }
+
         return rtn;
     }
 
     private String[] getTextFields() {
         int[] ids = {R.id.teamNumber, R.id.comments};
-        String[] names = {"team Number", "Comments"};
         String[] rtn = new String[ids.length];
 
         for (int i = 0; i < rtn.length; i++) {
             EditText edit = findViewById(ids[i]);
-            rtn[i] = names[i] + "," + edit.getText();
+            rtn[i] = getResources().getResourceEntryName(ids[i]) + "," + edit.getText();
         }
         return rtn;
     }
 
     private String[] getDropDowns() {
         int[] ids = {R.id.dropColor, R.id.dropPosition, R.id.dropClimb, R.id.dropConnection};
-        String[] names = {"Drop Color", "Drop Position", "Drop Climb", "Drop Connection"};
         String[] rtn = new String[ids.length];
 
         for (int i = 0; i < rtn.length; i++) {
             Spinner spin = findViewById(ids[i]);
-            rtn[i] = names[i] + "," + spin.getSelectedItem().toString();
+            rtn[i] = getResources().getResourceEntryName(ids[i]) + "," + spin.getSelectedItem().toString();
         }
         return rtn;
     }
@@ -154,6 +202,13 @@ public class ScoutingForm extends AppCompatActivity {
             for(String str : getDropDowns()) {
                 csv.addRow(str);
             }
+
+            double average = 0;
+            for(Double lap : laps) {
+                average += lap;
+            }
+            average /= laps.size() ;
+            csv.addRow("averageLap," + average);
 
             PrintWriter writer = new PrintWriter(file);
             writer.write(csv.compile());

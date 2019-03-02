@@ -260,6 +260,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/teleOP" android:layout_weight="1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <Chronometer
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/chronometer" android:layout_weight="1"/>
+                <Button
+                        android:text="Start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/timerStart" android:layout_weight="1"
+                        android:onClick="timerStart"/>
+                <Button
+                        android:text="Reset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/timerReset" android:layout_weight="1"
+                        android:onClick="timerReset"/>
+                <Button
+                        android:text="Lap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/timerLap" android:layout_weight="1"
+                        android:onClick="timerLap"/>
+            </LinearLayout>
             <TextView
                     android:text="Cargo Ship Cargo"
                     android:layout_width="match_parent"
